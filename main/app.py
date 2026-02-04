@@ -1,4 +1,4 @@
-DEV_MODE = False # set to False for production and True for developement
+DEV_MODE = True # set to False for production and True for developement
 from flask import Flask, render_template
 from datetime import datetime
 import os 
@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 DAYS = [
-    ("rose", "🌹 Rose Day", "02-07"),
+    ("rose", "🌹 Rose Day", "02-03"),
     ("propose", "💍 Propose Day", "02-08"),
     ("chocolate", "🍫 Chocolate Day", "02-09"),
     ("teddy", "🧸 Teddy Day", "02-10"),
