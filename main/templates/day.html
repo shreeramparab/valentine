@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>{{ title }}</h1>
+
+{% if images %}
+<div class="slider">
+  {% for img in images %}
+    <img
+      src="{{ url_for('static', filename=img) }}"
+      class="slide {% if loop.first %}active{% endif %}"
+      data-caption="{{ captions[loop.index0] if captions|length > loop.index0 else '' }}"
+    >
+  {% endfor %}
+
+  <button class="nav prev" onclick="changeSlide(-1)">❮</button>
+  <button class="nav next" onclick="changeSlide(1)">❯</button>
+</div>
+
+<p id="caption" class="caption"></p>
+{% else %}
+<p>No photos yet… but my love is already here 💕</p>
+{% endif %}
+
+<script src="{{ url_for('static', filename='slider.js') }}"></script>
+
+</body>
+</html>

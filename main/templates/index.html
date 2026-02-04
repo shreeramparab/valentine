@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Valentine ❤️</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>💖 Valentine Week for You 💖</h1>
+<p class="subtitle">One surprise every day… just for you 🫶</p>
+
+<div class="cards">
+  {% for day in days %}
+    <div
+      class="card {{ 'unlocked' if day.unlocked else 'locked' }}"
+      data-unlocked="{{ day.unlocked|lower }}"
+      data-link="/day/{{ day.slug }}"
+    >
+      {{ day.name }}
+    </div>
+  {% endfor %}
+</div>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <p id="popup-text"></p>
+    <button onclick="closePopup()">Okay 💕</button>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

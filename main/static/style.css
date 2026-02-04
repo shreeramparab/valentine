@@ -1,0 +1,119 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  min-height: 100vh;
+  text-align: center;
+  padding: 40px;
+  color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: rgba(255,255,255,0.25);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.locked {
+  filter: blur(2px);
+  position: relative;
+}
+
+.locked::after {
+  content: "🔒";
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.unlocked {
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.slide.active {
+  display: block;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 2rem;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: -15px; }
+.next { right: -15px; }
+
+
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.popup-content {
+  background: white;
+  color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 300px;
+  margin: 15% auto;
+}
+
+.caption {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #fff;
+  text-align: center;
+}
+
+
