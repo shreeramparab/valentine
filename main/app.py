@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 DAYS = [
-    ("rose", "🌹 Rose Day", "02-03"),
+    ("rose", "🌹 Rose Day", "02-07"),
     ("propose", "💍 Propose Day", "02-08"),
     ("chocolate", "🍫 Chocolate Day", "02-09"),
     ("teddy", "🧸 Teddy Day", "02-10"),

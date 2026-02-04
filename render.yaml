@@ -2,5 +2,5 @@ services:
   - type: web
     name: mygf-flask-app
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn mygf.app:app
+    buildCommand: pip install -r requirements.txt && pip install --upgrade pip
+    startCommand: gunicorn main.app:app
