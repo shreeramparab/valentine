@@ -1,4 +1,4 @@
-DEV_MODE = True # set to False for production and True for developement
+DEV_MODE = False # set to False for production and True for developement
 from flask import Flask, render_template
 from datetime import datetime
 import os 
