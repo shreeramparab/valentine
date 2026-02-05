@@ -1,4 +1,4 @@
-DEV_MODE = False # set to False for production and True for developement
+DEV_MODE = True # set to False for production and True for developement
 from flask import Flask, render_template
 from datetime import datetime
 import os 
@@ -40,7 +40,9 @@ CAPTIONS = {
     "promise": [
         "I promise to stand by you, no matter what 🤞",
         "I promise to love you more every single day",
-        "You are my always"
+        "You are my always",
+        "I promise to love you more every single day",
+        "I promise you to be with you forever"
     ],
     "hug": [
         "Every hug from you fixes everything 🤗",
@@ -59,7 +61,6 @@ CAPTIONS = {
     ]
 }
 
-
 def today_str():
     now = datetime.now()
     return f"{now.month:02d}-{now.day:02d}"
@@ -67,7 +68,7 @@ def today_str():
 @app.route("/")
 def index():
     today = today_str()
-    days = []
+    days=[]
 
     for slug, name, date in DAYS:
         days.append({

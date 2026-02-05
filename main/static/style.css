@@ -117,3 +117,15 @@ body {
 }
 
 
+
+.love-video {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 900px;   /* keeps it wide */
+  height: auto;       /* keeps aspect ratio */
+  aspect-ratio: 16 / 9; /* forces horizontal */
+  object-fit: contain;
+  background: black;  /* fills empty space nicely */
+  border-radius: 12px;
+}
