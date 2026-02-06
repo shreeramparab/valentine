@@ -1,4 +1,4 @@
-DEV_MODE = True # set to False for production and True for developement
+DEV_MODE = False # set to False for production and True for developement
 from flask import Flask, render_template
 from datetime import datetime
 import os 
@@ -115,8 +115,6 @@ def day(slug):
 
 
     return "Not found", 404
-
-
 
 if __name__ == "__main__":
     port=int(os.environ.get("PORT", 5000))
